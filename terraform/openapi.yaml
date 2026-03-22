@@ -1,0 +1,30 @@
+swagger: "2.0"
+info:
+  title: image-processing-api
+  description: API Gateway for Image Processing
+  version: 1.0.0
+
+schemes:
+  - https
+
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "x-api-key"
+    in: "header"
+
+security:
+  - api_key: []
+
+paths:
+  /v1/images/upload:
+    post:
+      security:
+        - api_key: []
+      summary: Upload Image
+      operationId: uploadImage
+      x-google-backend:
+        address: https://us-central1-image-pipeline-456.cloudfunctions.net/upload-image
+      responses:
+        200:
+          description: Success

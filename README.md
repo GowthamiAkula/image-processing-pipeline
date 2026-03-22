@@ -193,6 +193,13 @@ gcloud functions logs read log-notification --region=us-central1
 
 ---
 
+### 🔐 API Key Usage
+
+This project uses an API key to secure the API Gateway endpoint.
+
+⚠️ Note: The API key is included in the `submission.json` file strictly for evaluation purposes. In real-world production systems, API keys should never be exposed publicly. Instead, they should be securely stored using services like Google Secret Manager and accessed dynamically at runtime.
+
+
 ## 📊 Features
 
 * Fully serverless (no VM usage)
